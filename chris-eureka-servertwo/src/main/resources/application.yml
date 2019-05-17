@@ -1,0 +1,43 @@
+eureka:
+  #服务注册类配置
+  client:
+    #指定服务注册中心地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    #启动服务注册  由于该应用为注册中心,所以设置为false,代表不向注册中心注册自己 （默认 true）
+    register-with-eureka: false
+    registerWithEureka: false
+
+    # 检索服务 由于注册中心的职责就是维护服务实例,它并不需要去检索服务,所以也设置为false    一般服务消费者（别的client）设置为true，（默认为true）
+    fetch-registry: false
+    fetchRegistry: false
+    # 从Eureka服务器端获取注册信息的间隔时间，单位：秒  默认30
+    registry-fetch-interval-seconds: 30
+    #连接 Eureka Server 的超时时间，单位：秒  默认 5
+    eureka-server-connect-timeout-seconds: 5
+    # 读取 Eureka Server 信息的超时时间，单位：秒 默认 8
+    eureka-server-read-timeout-seconds: 8
+    # 获取实例时是否过滤，只保留UP状态的实例 默认 true
+    filter-only-up-instances: true
+    #Eureka 服务端连接空闲关闭时间，单位：秒  默认30
+    eureka-connection-idle-timeout-seconds: 30
+    #从Eureka 客户端到所有Eureka服务端的连接总数 默认200
+    eureka-server-total-connections: 200
+    #从Eureka客户端到每个Eureka服务主机的连接总数 默认50
+    eureka-server-total-connections-per-host: 50
+  #服务注册中心配置
+  server:
+    #关闭注册中心的保护机制，Eureka 会统计15分钟之内心跳失败的比例低于85%将会触发保护机制，不剔除服务提供者，如果关闭服务注册中心将不可用的实例正确剔除
+    #只在开发环境配置 （生产环境为true  开发环境配置建议设为false）
+    enable-self-preservation: false
+  #服务实例类配置
+  instance:
+    #设置当前实例的主机名称
+    hostname: localhost
+spring:
+  application:
+    name: eurekaServerTwo
+server:
+  port: 8762
+
+
