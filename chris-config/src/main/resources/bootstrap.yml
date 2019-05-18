@@ -1,0 +1,30 @@
+server:
+  port: 8099
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/anugslin9/chris-config-base.git
+          #(强烈推荐使用basedir 配置缓存位置  防止出现 脏数据导致git 数据无法拉取 （有时 force-pull:true 也解决不了的问题）)
+          basedir: D:\workspace\github\chris-cloud-note\chris-config\basedir
+          #它将使Spring Cloud Config Server 强制从本地存储库中删除未跟踪的分支
+          deleteUntrackedBranches: true
+          username: lin1209120@163.com
+          password: lin1209120
+          #force-pull如果本地副本是脏的，则有一个属性可以从远程存储库强制提取Spring Cloud Config Server
+          force-pull: true
+        bootstrap: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+
+

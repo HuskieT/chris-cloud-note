@@ -1,0 +1,11 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: getway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+  profiles:
+    active: dev

@@ -2,9 +2,20 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+  instance:
+    prefer-ip-address: true
 spring:
   application:
     name: eruekaClient
-
+  cloud:
+    discovery:
+      enabled: true
+  profiles:
+    active: dev
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
 server:
   port: 8002

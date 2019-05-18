@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    #基本属性
+    # mysql-connector-java 6.0  （driver-class-name为com.mysql.cj.jdbc.Driver,并且需要设置serverTimezone，useSSL=false 禁用禁用SSL连接）
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: tongruan
