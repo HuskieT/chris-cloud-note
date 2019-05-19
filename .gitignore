@@ -1,6 +1,24 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
 
 ### STS ###
 .apt_generated
@@ -16,6 +34,9 @@ HELP.md
 *.iws
 *.iml
 *.ipr
+/.mvn/
+mvnw
+*.cmd
 
 ### NetBeans ###
 /nbproject/private/
