@@ -94,11 +94,11 @@
         <!--</dependency>-->
 
 
-        <!--&lt;!&ndash;包含sleuth和zipkin spring-cloud-starter-zipkin 包含 spring-cloud-starter-sleuth &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
-        <!--</dependency>-->
+        <!--包含sleuth和zipkin spring-cloud-starter-zipkin 包含 spring-cloud-starter-sleuth -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
 
 
     </dependencies>

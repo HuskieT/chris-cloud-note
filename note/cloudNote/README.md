@@ -1,3 +1,12 @@
+
+**eureka-client 启动 连接 8888端口的解决：**
+
+修改application.yml 为 bootstrap.yml
+
+**eureka-client  无法拉取config-server的问题的解决：**
+
+# spring.cloud.config.discovery.enabled = true (在某些版本中没有config （此处必须要有config才能拉取config-server的配置） 切记!)
+
 一： 不适合微服务的业务形态
 系统中包含很多的强事务场景
 访问压力不大 可用性要求不高
@@ -179,15 +188,13 @@ fallbackMethod（回退函数）中实现具体降级逻辑
 
 circuit breaker 熔断器
 
+八：链路追踪
+
+//TODO
+zipkin 链路视图界面未完成
 
 
-**eureka-client 启动 连接 8888端口的解决：**
-
-修改application.yml 为 bootstrap.yml
-
-**eureka-client  无法拉取config-server的问题的解决：**
-
-# spring.cloud.config.discovery.enabled = true (在某些版本中没有config （此处必须要有config才能拉取config-server的配置） 切记!)
+九：springcloud docker部署
 
 
 
