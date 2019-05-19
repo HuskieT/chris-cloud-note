@@ -37,6 +37,7 @@ HELP.md
 /.mvn/
 mvnw
 *.cmd
+/basedir/
 
 ### NetBeans ###
 /nbproject/private/
