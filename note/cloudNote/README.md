@@ -72,7 +72,10 @@ config-sever 会合并git仓库的yml文件
 //TODO  
 本地暂时没有安装Rabbitmq ，config-server 可以使用 bus-amqp 依赖Rabbitmq 完成 git配置的热更新（需要用到@RefreshScope 注解）
 git 远端服务器使用webHooks  可以实现提交配置到git （webHooks 配置有 bus-refresh 的地址 发送请求 ） 跟新 config-server 和 config-client的 config配置  
-
+//安装rabbitmq后 利用webHooks 实现config的自动更新
+配置 webHooks地址为 项目 config-sever的地址（例如：config-sever地址为：http://114.112.32.11:8099 则webHooks配置地址为: http://114.112.32.11:8099/monitor）
+（content type： application/json）
+这样就配置完成了
 **不停止服务器  一键化更新这个项目的所有配置**
 
 
@@ -149,6 +152,48 @@ url: http://localhost:11000      已经启动organizationstatic服务实例的�
 serviceId     服务id
 sensitiveHeaders    （默认值 Cookie,Set-Cookie,Authorization）敏感headers也支持全局设置 zuul.sensitiveHeaders. 如果在单个路由中设置 sensitiveHeaders 会覆盖全局 sensitiveHeaders 设置.
 】
+
+5 跨域问题的解决
+
+【1】在被调用类或者方法上添加@CrossOrigin 注解
+【2】 zuul添加CorsFilter过滤器
+
+慕课网 ajax跨域完全解决方案
+
+七： 服务容错和Hystrix
+
+Hystrix 中文：豪猪
+
+防雪崩利器 基于 Netflix对应的Hystrix
+
+服务降级
+依赖隔离
+服务熔断
+
+1 服务降级
+优先核心服务,非核心服务不可用或者弱可用
+通过@HystrixCommand 注解指定
+fallbackMethod（回退函数）中实现具体降级逻辑
+
+2 熔断
+
+circuit breaker 熔断器
+
+
+
+**eureka-client 启动 连接 8888端口的解决：**
+
+修改application.yml 为 bootstrap.yml
+
+**eureka-client  无法拉取config-server的问题的解决：**
+
+# spring.cloud.config.discovery.enabled = true (在某些版本中没有config （此处必须要有config才能拉取config-server的配置） 切记!)
+
+
+
+
+
+
 
 
 

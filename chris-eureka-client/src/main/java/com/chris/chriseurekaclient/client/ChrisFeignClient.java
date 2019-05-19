@@ -27,4 +27,8 @@ public interface ChrisFeignClient {
     @GetMapping("/getProductTwo")
     String getProductTwo(@RequestParam("id")String id,@RequestParam("name") String name);
 
+    @GetMapping("/hystrixTestServer")
+    String hystrixTestServer();
+
+
 }

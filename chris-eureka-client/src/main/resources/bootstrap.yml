@@ -1,0 +1,32 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+  instance:
+    prefer-ip-address: true
+# spring.cloud.config.discovery.enabled = true (在某些版本中没有config （此处必须要有config才能拉取config-server的配置） 切记!)
+spring:
+  application:
+    name: eruekaClient
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+  profiles:
+    active: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    #  消息发送到交换机确认机制,是否确认回调
+    publisher-confirms: true
+    #
+    publisher-returns: true
+  devtools:
+    restart:
+      #热部署生效 spring.devtools.restart.enabled: true
+      enabled: false
+server:
+  port: 8002

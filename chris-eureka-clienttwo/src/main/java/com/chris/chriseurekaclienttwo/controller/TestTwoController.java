@@ -58,5 +58,14 @@ public class TestTwoController {
         return "this is product";
     }
 
+    @GetMapping("/hystrixTestServer")
+    public String hystrixTestServer() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "hystrixTestServer";
+    }
 
 }

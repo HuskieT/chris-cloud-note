@@ -8,8 +8,10 @@ spring:
   application:
     name: eruekaClientTwo
   cloud:
-    discovery:
-      enabled: true
+    config:
+      discovery:
+        enabled: true
+        service-id: config
   profiles:
     active: dev
 server:
